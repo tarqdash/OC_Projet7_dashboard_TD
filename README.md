@@ -1,4 +1,4 @@
-# OC_DS_Project7_dashboard_streamlit
+# OC_Projet7_dashboard_TD
 
 Déploiement d'un dashboard interrogeant un modèle de scoring (OpenClassrooms | Data Scientist | Projet 7)
 
