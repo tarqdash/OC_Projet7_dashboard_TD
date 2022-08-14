@@ -35,7 +35,7 @@ image = Image.open(path)
 st.sidebar.image(image, width=250)
 
 # local API (à remplacer par l'adresse de l'application déployée)
-API_URL = "https://dashboard.heroku.com/apps/oc-api-fastapi-td/api/"
+API_URL = "https://oc-api-fastapi-td.herokuapp.com/api/"
 #################################################################################
 # LIST OF API REQUEST FUNCTIONS
 #################################################################################
