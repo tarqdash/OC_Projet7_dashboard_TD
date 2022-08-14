@@ -287,7 +287,7 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     
     #  Get nearest neighbors (50)
     NN_samples = get_NN_samples(selected_sk_id)
-    st.write(NN_samples)
+    #st.write(NN_samples)
     
       
     # Age
