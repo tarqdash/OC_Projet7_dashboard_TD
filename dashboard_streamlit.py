@@ -282,7 +282,6 @@ st.sidebar.header("📊 Comparison with Similar clients")
 
 
 if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
-    st.write("IN PROGRESS ...")
     
     #  Get nearest neighbors (50)
     NN_samples = get_NN_samples(selected_sk_id)
@@ -293,7 +292,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Age"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show age infos / Hide", value = True):
-            st.write("IN PROGRESS ...Age")
             boxplot_col, write_col = st.columns((10, 2))
             with boxplot_col:
                 fig = plt.figure(figsize=(5, 4))
@@ -306,7 +304,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("YEARS EMPLOYED"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show years employed infos / Hide", value = True): 
-            st.write("IN PROGRESS ...YEARS EMPLOYED")
             boxplot_col, write_col = st.columns((10, 2))
             with boxplot_col:
                 # affichage des boxplots
@@ -321,7 +318,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
         st.sidebar.write("**Work** :", client_work)
         # Graph dans app principale
         if st.sidebar.checkbox("Show Work infos / Hide", value = True): 
-            st.write("IN PROGRESS ...Work")
             pie_col, write_col = st.columns((10, 2))
             with pie_col:
                 #plot the pie graph
@@ -336,7 +332,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Income"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show income infos / Hide", value = True): 
-            st.write("IN PROGRESS ...Income")
             boxplot_col, write_col = st.columns((10, 2))
             with boxplot_col:
                 fig = plt.figure(figsize=(10, 4))
@@ -349,7 +344,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Contract Type"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show contract type infos / Hide", value = True):
-            st.write("IN PROGRESS ...Contract Type")
             pie_col, write_col = st.columns((10, 2))
             with pie_col:
                 #plot the pie graph
@@ -363,7 +357,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Family Status"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show Family Status infos / Hide", value = True): 
-            st.write("IN PROGRESS ...Family Status")
             pie_col, write_col = st.columns((10, 2))
             with pie_col:
                 #plot the pie graph
@@ -377,7 +370,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Gender"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show Gender infos / Hide", value = True): 
-            st.write("IN PROGRESS ...Gender")
             pie_col, write_col = st.columns((10, 2))
             with pie_col:
                 #plot the pie graph
@@ -392,7 +384,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     if st.sidebar.button("Education Type"):
         # Graph dans app principale
         if st.sidebar.checkbox("Show Education infos / Hide", value = True):
-            st.write("IN PROGRESS ...Education Type")
             pie_col, write_col = st.columns((10, 2))
             with pie_col:
                 #plot the pie graph
