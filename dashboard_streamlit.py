@@ -18,7 +18,7 @@ import plotly
 #################################
 #################################
 # Configuration of the streamlit page
-st.set_page_config(page_title='PRET A DEPENSER_Dashboard for Credit Scoring',
+st.set_page_config(page_title='Dashboard for Credit Scoring',
                    page_icon='random',
                    layout='centered',
                    initial_sidebar_state='auto')
