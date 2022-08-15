@@ -18,12 +18,12 @@ import plotly
 #################################
 #################################
 # Configuration of the streamlit page
-st.set_page_config(page_title='PRET A DEPENSER DASHBOARD',
+st.set_page_config(page_title='PRET A DEPENSER_Dashboard for Credit Scoring',
                    page_icon='random',
                    layout='centered',
                    initial_sidebar_state='auto')
 # Title 
-st.markdown("<h1 style='text-align: center; color: #E2383F;'><strong>💹 PRET A DEPENSER DASHBOARD</u></strong></h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #E2383F;'><strong>💹 Dashboard for Credit Scoring </u></strong></h1>", unsafe_allow_html=True)
 # Subtitle
 st.markdown("<h4 style='text-align: center'><i>“Tarek DACHRAOUI - Data Science OC_Projet 7.”</i></h4>", unsafe_allow_html=True)
 st.markdown("***")
@@ -35,7 +35,8 @@ image = Image.open(path)
 st.sidebar.image(image, width=250)
 
 # local API (à remplacer par l'adresse de l'application déployée)
-API_URL = "https://oc-api-fastapi-td.herokuapp.com/api/"
+#API_URL = "http://127.0.0.1:8000/api/"
+API_URL = "https://oc-api-FastAPI-td.herokuapp.com/api/"
 #################################################################################
 # LIST OF API REQUEST FUNCTIONS
 #################################################################################
@@ -150,8 +151,8 @@ selected_sk_id = st.sidebar.selectbox("Please select a client ID", SK_IDS, key=1
 # SCORING
 # ##################################################
 
-st.header("  Default Risk Score  ")
-st.write('---------------------------------------------------------------------------------------')
+#st.header("  Default Risk Score  ")
+#st.write('---------------------------------------------------------------------------------------')
 
 #  Get client_score & optimal_threshold
 client_score , optimal_threshold = get_customer_scoring(selected_sk_id)
@@ -164,7 +165,7 @@ with gauge_col:
     range_val = optimal_threshold*100
     gauge = go.Figure(go.Indicator(
         domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': "Default Risk Score gauge", 'font': {'size': 24}},
+        title = {'text': "Default Risk Score", 'font': {'size': 36}},
         value = client_score*100,
         mode = "gauge+number",
         gauge = {'axis': {'range': [None, 100]},
@@ -238,8 +239,7 @@ st.sidebar.subheader('📈 SHAP explainer')
 if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
 
     st.header("  SHAP Force & Decision Plots  ")
-    st.write('---------------------------------------------------------------------------------------')
-    
+        
     shap_plot_col, feat_desc_col = st.columns((5, 2))
     
     with shap_plot_col:
@@ -395,5 +395,4 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     
     
 st.write('---------------------------------------------------------------------------------------')
-    
     
