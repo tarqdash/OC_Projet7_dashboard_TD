@@ -11,7 +11,7 @@ Déploiement d'un dashboard interrogeant un modèle de scoring (OpenClassrooms |
 
 Un dashboard streamlit est déployé sur les serveurs Streamlit.
 Il est visible en suivant le lien suivant :
-https://share.streamlit.io/tarqdash/projet7_dashboard/main/dashboard_streamlit.py
+https://tarqdash-oc-projet7-dashboard-td-dashboard-streamlit-e8y7cl.streamlitapp.com/
 
 Il affiche de nombreuses données et graphes relatifs à un client choisi :
 
