@@ -16,9 +16,8 @@ https://tarqdash-oc-projet7-dashboard-td-dashboard-streamlit-e8y7cl.streamlitapp
 Il affiche de nombreuses données et graphes relatifs à un client choisi :
 
 - Risque de défaut (en %)
-- Décision du modèle
-- Données numériques du client (avant et après traitement)
-- Graphe situant les paramètres du client par rapport aux autres clients et autres clients similaires (boxplot, pieplots)
-- Importance globale et locale des paramètres dans la décision du modèle
-. Les données du client et les résultats  Cette API est interrogée par un dashboard développé grâce à Streamlit.
+- Décision du modèle (gauge : du vert pour un client excelent au rouge pour un client weak)
+- Données numériques du client (Valeurs de features)
+- Interpretation SHAP de la prediction (Force & Decision Plots)
+- Plots (boxplot, pieplots) situants les paramètres du client par rapport aux clients similaires (Nearest Neighbors)
 
