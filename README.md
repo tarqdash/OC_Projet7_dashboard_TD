@@ -21,3 +21,4 @@ Il affiche de nombreuses données et graphes relatifs à un client choisi :
 - Interpretation SHAP de la prediction (Force & Decision Plots)
 - Plots (boxplot, pieplots) situants les paramètres du client par rapport aux clients similaires (Nearest Neighbors)
 
+Ce dashboard utilise une api FastAPI deploye sur Heroku.
