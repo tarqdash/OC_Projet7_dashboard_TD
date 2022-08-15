@@ -35,8 +35,7 @@ image = Image.open(path)
 st.sidebar.image(image, width=250)
 
 # local API (à remplacer par l'adresse de l'application déployée)
-API_URL = "http://127.0.0.1:8000/api/"
-# API_URL = "https://oc-api-FastAPI-td.herokuapp.com/api/"
+API_URL = "https://oc-api-fastapi-td.herokuapp.com/api/"
 #################################################################################
 # LIST OF API REQUEST FUNCTIONS
 #################################################################################
