@@ -18,7 +18,7 @@ import plotly
 #################################
 #################################
 # Configuration of the streamlit page
-st.set_page_config(page_title='PRET A DEPENSER_Dashboard for Credit Scoring',
+st.set_page_config(page_title='Dashboard for Credit Scoring',
                    page_icon='random',
                    layout='centered',
                    initial_sidebar_state='auto')
@@ -26,8 +26,6 @@ st.set_page_config(page_title='PRET A DEPENSER_Dashboard for Credit Scoring',
 st.markdown("<h1 style='text-align: center; color: #E2383F;'><strong>💹 Dashboard for Credit Scoring </u></strong></h1>", unsafe_allow_html=True)
 # Subtitle
 st.markdown("<h4 style='text-align: center'><i>“Tarek DACHRAOUI - Data Science OC_Projet 7.”</i></h4>", unsafe_allow_html=True)
-st.markdown("***")
-
 
 # Display the logo in the sidebar
 path = "./images/logo.png"
@@ -139,6 +137,22 @@ def get_NN_samples(selected_sk_id):
     return NN_samples
 
 
+#################################################################################
+# FUNCTIONS
+#################################################################################
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+# ------------------------------------------------
+# Style css
+# ------------------------------------------------
+#local_css("style/style.css")  
+
+#################################################################################
+# Main
+#################################################################################
 # ------------------------------------------------
 # Select the customer's ID
 # ------------------------------------------------
@@ -150,9 +164,6 @@ selected_sk_id = st.sidebar.selectbox("Please select a client ID", SK_IDS, key=1
 # ##################################################
 # SCORING
 # ##################################################
-
-#st.header("  Default Risk Score  ")
-#st.write('---')
 
 #  Get client_score & optimal_threshold
 client_score , optimal_threshold = get_customer_scoring(selected_sk_id)
@@ -231,7 +242,8 @@ with cli_info_col:
     st.write("**Income**", int(client_income), "$")
     st.write("**Contract type** :", client_contract)
 
-st.write('---------------------------------------------------------------------------------------')
+st.write('---')
+
 st.sidebar.subheader('📈 SHAP explainer')
 # ------------------------------------------------
 # Explain Prediction score
@@ -274,7 +286,8 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
         st.write('Feature value :',feat_val)
 
 
-st.write('---')        
+st.write('---') 
+st.write('##')
 
 # Comparison with Similar clients
 st.sidebar.header("📊 Comparison with Similar clients")
