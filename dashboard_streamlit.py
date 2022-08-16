@@ -212,9 +212,12 @@ with gauge_col:
     else :
         trust_text = "WEAK"
 
-    st.write('TRUST score for the selected client : **{}**'.format(trust_text))
+    
 
 with cli_info_col:
+    
+    st.write('TRUST score : **{}**'.format(trust_text))
+    
     # Get client info
     selected_client_info = get_client_info(selected_sk_id)
 
