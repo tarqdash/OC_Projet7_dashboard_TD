@@ -152,7 +152,7 @@ selected_sk_id = st.sidebar.selectbox("Please select a client ID", SK_IDS, key=1
 # ##################################################
 
 #st.header("  Default Risk Score  ")
-#st.write('---------------------------------------------------------------------------------------')
+#st.write('---')
 
 #  Get client_score & optimal_threshold
 client_score , optimal_threshold = get_customer_scoring(selected_sk_id)
@@ -274,7 +274,7 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
         st.write('Feature value :',feat_val)
 
 
-st.write('---------------------------------------------------------------------------------------')        
+st.write('---')        
 
 # Comparison with Similar clients
 st.sidebar.header("📊 Comparison with Similar clients")
@@ -325,9 +325,7 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
                 NN_samples["NAME_INCOME_TYPE"].value_counts(normalize=True).plot.pie()
                 st.pyplot(fig)
             with write_col:
-                st.write("**Client Work**", client_work)
-                
-            
+                st.write("**Client Work**", client_work)            
 
     if st.sidebar.button("Income"):
         # Graph dans app principale
@@ -392,8 +390,5 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
                 st.pyplot(fig)
             with write_col:
                 st.write("**Education**", client_education)
-    
-    
-st.write('---------------------------------------------------------------------------------------')
     
     
