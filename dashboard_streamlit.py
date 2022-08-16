@@ -18,7 +18,7 @@ import plotly
 #################################
 #################################
 # Configuration of the streamlit page
-st.set_page_config(page_title='Dashboard for Credit Scoring',
+st.set_page_config(page_title='PRET A DEPENSER_Dashboard for Credit Scoring',
                    page_icon='random',
                    layout='centered',
                    initial_sidebar_state='auto')
@@ -238,23 +238,23 @@ st.sidebar.subheader('📈 SHAP explainer')
 # ------------------------------------------------
 if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
 
-    st.header("  SHAP Force & Decision Plots  ")
-        
-    shap_plot_col, feat_desc_col = st.columns((5, 2))
+    # Get shap plot params
+    expected_value_1, shap_values_1, selected_sample, feature_names = get_shap_plot_params(selected_sk_id)
     
-    with shap_plot_col:
-        # Get shap plot params
-        expected_value_1, shap_values_1, selected_sample, feature_names = get_shap_plot_params(selected_sk_id)
-
-        ind_fig = shap.force_plot(expected_value_1,
+    st.header("  SHAP Force & Decision Plots  ")
+    
+    ind_fig = shap.force_plot(expected_value_1,
                                   shap_values_1,
                                   selected_sample,
                                   feature_names=feature_names,
                                   link='logit',
                                   plot_cmap=["#EF553B","#636EFA"])
-        ind_fig_html = f"<head>{shap.getjs()}</head><body>{ind_fig.html()}</body>"
-        components.html(ind_fig_html, height=120)
-        
+    ind_fig_html = f"<head>{shap.getjs()}</head><body>{ind_fig.html()}</body>"
+    components.html(ind_fig_html, height=120)
+
+    shap_plot_col, feat_desc_col = st.columns((5, 2))
+    
+    with shap_plot_col:
         fig = plt.figure(figsize=(14, 7))
         shap.decision_plot(expected_value_1, shap_values_1, feature_names=list(feature_names), link='logit')
         st.pyplot(fig)
@@ -395,4 +395,5 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     
     
 st.write('---------------------------------------------------------------------------------------')
+    
     
