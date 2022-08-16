@@ -26,6 +26,7 @@ st.set_page_config(page_title='Dashboard for Credit Scoring',
 st.markdown("<h1 style='text-align: center; color: #E2383F;'><strong>💹 Dashboard for Credit Scoring </u></strong></h1>", unsafe_allow_html=True)
 # Subtitle
 st.markdown("<h4 style='text-align: center'><i>“Tarek DACHRAOUI - Data Science OC_Projet 7.”</i></h4>", unsafe_allow_html=True)
+st.write("---")
 
 # Display the logo in the sidebar
 path = "./images/logo.png"
