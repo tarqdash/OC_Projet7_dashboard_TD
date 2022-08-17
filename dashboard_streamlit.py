@@ -218,7 +218,7 @@ with gauge_col:
 with cli_info_col:
     
     st.write('TRUST score : **{}**'.format(trust_text))
-    st.wriite('---')
+    st.write('---')
     
     # Get client info
     selected_client_info = get_client_info(selected_sk_id)
@@ -237,25 +237,25 @@ with cli_info_col:
 
     # Affichage d'informations sur le client sélectionné dans la sidebar
     st.header("📋 Client informations")
-    st.wriite('---')
+    st.write('---')
     st.write("**Client ID**", client_id)
     st.wriite('---')
     st.write("**Age**", int(client_age), "years")
-    st.wriite('---')
+    st.write('---')
     st.write("**Gender** :", client_gender)
-    st.wriite('---')
+    st.write('---')
     st.write("**Family status** :", client_status)
-    st.wriite('---')
+    st.write('---')
     st.write("**Education** :", client_education)
-    st.wriite('---')
+    st.write('---')
     st.write("**Years employed**", int(client_employed), "years")
-    st.wriite('---')
+    st.write('---')
     st.write("**Income type** :", client_work)
-    st.wriite('---')
+    st.write('---')
     st.write("**Income**", int(client_income), "$")
-    st.wriite('---')
+    st.write('---')
     st.write("**Contract type** :", client_contract)
-    st.wriite('---')
+    st.write('---')
 
 st.write('---')
 
