@@ -237,25 +237,15 @@ with cli_info_col:
 
     # Affichage d'informations sur le client sélectionné dans la sidebar
     st.header("📋 Client informations")
-    st.write('---')
     st.write("**Client ID**", client_id)
-    st.write('---')
     st.write("**Age**", int(client_age), "years")
-    st.write('---')
     st.write("**Gender** :", client_gender)
-    st.write('---')
     st.write("**Family status** :", client_status)
-    st.write('---')
     st.write("**Education** :", client_education)
-    st.write('---')
     st.write("**Years employed**", int(client_employed), "years")
-    st.write('---')
     st.write("**Income type** :", client_work)
-    st.write('---')
     st.write("**Income**", int(client_income), "$")
-    st.write('---')
     st.write("**Contract type** :", client_contract)
-    st.write('---')
 
 st.write('---')
 
