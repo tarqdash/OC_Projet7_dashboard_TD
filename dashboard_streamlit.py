@@ -239,7 +239,7 @@ with cli_info_col:
     st.header("📋 Client informations")
     st.write('---')
     st.write("**Client ID**", client_id)
-    st.wriite('---')
+    st.write('---')
     st.write("**Age**", int(client_age), "years")
     st.write('---')
     st.write("**Gender** :", client_gender)
