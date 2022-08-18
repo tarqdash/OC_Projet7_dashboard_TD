@@ -169,7 +169,7 @@ selected_sk_id = st.sidebar.selectbox("Please select a client ID", SK_IDS, key=1
 #  Get client_score & optimal_threshold
 client_score , optimal_threshold = get_customer_scoring(selected_sk_id)
 
-gauge_col, padding, cli_info_col = st.columns((100, 8, 30))
+cli_info_col, padding, gauge_col  = st.columns((3, 2, 9))
 
 with gauge_col:
     ## Gauge ##
