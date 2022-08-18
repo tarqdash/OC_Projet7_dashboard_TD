@@ -269,7 +269,7 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
     ind_fig_html = f"<head>{shap.getjs()}</head><body>{ind_fig.html()}</body>"
     components.html(ind_fig_html, height=120)
 
-    shap_plot_col, padding, feat_desc_col = st.columns((7, 2, 2))
+    feat_desc_col, padding, shap_plot_col = st.columns((2, 2, 10))
     
     with shap_plot_col:
         fig = plt.figure(figsize=(14, 7))
