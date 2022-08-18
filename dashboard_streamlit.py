@@ -271,11 +271,6 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
 
     feat_desc_col, padding, shap_plot_col = st.columns((2, 2, 10))
     
-    with shap_plot_col:
-        fig = plt.figure(figsize=(14, 7))
-        shap.decision_plot(expected_value_1, shap_values_1, feature_names=list(feature_names), link='logit')
-        st.pyplot(fig)
-
     with feat_desc_col:
         #Feature descriptions
         feat_desc = get_feat_desc()
@@ -289,10 +284,14 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
         #write
         st.write('Feature Description : **{}**'.format(description.values))
         st.write('Feature value :',feat_val)
+    
+    with shap_plot_col:
+        fig = plt.figure(figsize=(14, 7))
+        shap.decision_plot(expected_value_1, shap_values_1, feature_names=list(feature_names), link='logit')
+        st.pyplot(fig)
 
 
 st.write('---') 
-st.write('##')
 
 # -------------------------------------------------------------------------------------
 # Comparison with Similar clients
