@@ -162,11 +162,11 @@ SK_IDS = get_sk_id_list()
 selected_sk_id = st.sidebar.selectbox("Please select a client ID", SK_IDS, key=1)
 
 
-# ##################################################
+# ------------------------------------------------
 # SCORING
-# ##################################################
+# ------------------------------------------------
 
-#  Get client_score & optimal_threshold
+#  Get client_score & optimal_threshold
 client_score , optimal_threshold = get_customer_scoring(selected_sk_id)
 
 gauge_col, padding, cli_info_col = st.columns((100, 8, 30))
@@ -250,9 +250,9 @@ with cli_info_col:
 st.write('---')
 
 st.sidebar.subheader('📈 SHAP explainer')
-# ------------------------------------------------
+# -------------------------------------------------------------------------------------
 # Explain Prediction score
-# ------------------------------------------------
+# -------------------------------------------------------------------------------------
 if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
 
     # Get shap plot params
@@ -294,14 +294,15 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
 st.write('---') 
 st.write('##')
 
+# -------------------------------------------------------------------------------------
 # Comparison with Similar clients
 st.sidebar.header("📊 Comparison with Similar clients")
-# ##################################################
+# -------------------------------------------------------------------------------------
 
 
 if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
     
-    #  Get nearest neighbors (50)
+    #  Get nearest neighbors (50)
     NN_samples = get_NN_samples(selected_sk_id)
     #st.write(NN_samples)
     
@@ -394,8 +395,6 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
                 st.pyplot(fig)
             with write_col:
                 st.write("**Gender**", client_gender)
-        
-            
     
     if st.sidebar.button("Education Type"):
         # Graph dans app principale
@@ -408,5 +407,42 @@ if st.sidebar.checkbox("Stats for nearest neighbors", key=4):
                 st.pyplot(fig)
             with write_col:
                 st.write("**Education**", client_education)
+   
+
+st.sidebar.subheader('📈 Global Stats')
+# -------------------------------------------------------------------------------------
+# Global Statistics
+# -------------------------------------------------------------------------------------
+if st.sidebar.checkbox('Global Stats', key=12):
     
-    
+    if st.sidebar.button("Failure to Repay by Age Group"):
+        # Graph dans app principale
+        if st.sidebar.checkbox("Show Failure to Repay by Age Group / Hide", value = True):
+            # Display the image
+            path = "./images/Failure to repay by group age.png"
+            image = Image.open(path)
+            st.image(image)
+            
+    if st.sidebar.button("Distrib. of EXT Sources"):
+        # Graph dans app principale
+        if st.sidebar.checkbox("Show Distrib. of EXT Sources / Hide", value = True):
+            # Display the image
+            path = "./images/Distrib of EXT Sources.png"
+            image = Image.open(path)
+            st.image(image)        
+            
+    if st.sidebar.button("Distrib. of Ages"):
+        # Graph dans app principale
+        if st.sidebar.checkbox("Show Distrib. of Ages / Hide", value = True):
+            # Display the image
+            path = "./images/Distrib of Ages.png"
+            image = Image.open(path)
+            st.image(image)
+        
+    if st.sidebar.button("Distrib. of Credit Income"):
+        # Graph dans app principale
+        if st.sidebar.checkbox("Show Distrib. of Credit Income / Hide", value = True):
+            # Display the image
+            path = "./images/Distrib of Credit Income.png"
+            image = Image.open(path)
+            st.image(image)
