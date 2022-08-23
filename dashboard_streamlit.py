@@ -107,8 +107,8 @@ def get_feat_desc():
     response = requests.get(FEAT_DESC_API_URL)
     # convert from JSON format to Python dict
     content = json.loads(response.content)
-    feat_desc = pd.DataFrame(content['feat_desc'])
-    feat_desc_names = list(pd.Series(content['feat_desc_names']).values)
+    feat_desc = pd.Series(content['feat_desc'])
+    feat_desc_names = list(pd.Series(content['feat_desc_names']))
     
     return feat_desc, feat_desc_names
 
@@ -280,7 +280,7 @@ if st.sidebar.checkbox('SHAP Prediction Explainer', key=3):
     with feat_desc_col:
         #Feature descriptions
         feat_desc, feat_desc_names = get_feat_desc()
-        selected_feat = st.selectbox("Please select a feature description", list(feat_desc_names), key=10)
+        selected_feat = st.selectbox("Please select a feature description", feat_desc_names, key=10)
         
         #Get feat value for the selected client
         feat_val = get_feat_val(selected_sk_id, selected_feat)
