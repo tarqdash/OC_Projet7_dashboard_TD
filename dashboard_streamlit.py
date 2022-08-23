@@ -107,7 +107,7 @@ def get_feat_desc():
     response = requests.get(FEAT_DESC_API_URL)
     # convert from JSON format to Python dict
     content = json.loads(response.content)
-    feat_desc = pd.Series(content['feat_desc'])
+    feat_desc = pd.DataFrame(content['feat_desc'])
     feat_desc_names = list(pd.Series(content['feat_desc_names']))
     
     return feat_desc, feat_desc_names
